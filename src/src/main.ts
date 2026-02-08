@@ -6,11 +6,11 @@ import './lib/hljsConfig.js';
 
 import { Haste } from './lib/Haste.js';
 
-const app = new Haste('Hastebin');
+const app = new Haste('the bin');
 
 async function handleInitialiseState(shouldPushRouteState = true) {
 	const path = window.location.hash.substring(1);
-	if (!path) {
+	if (path === '') {
 		app.newDocument();
 
 		if (shouldPushRouteState) {

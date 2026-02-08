@@ -4,7 +4,6 @@ import type { DocumentData, LoadedHasteDocument } from './types.js';
 
 const api = (handle?: string) => (import.meta.env.VITE_API || '') + (handle || '');
 
-
 /**
  * Represents a single document
  */
@@ -84,7 +83,7 @@ export class HasteDocument {
 				},
 				FetchResultTypes.JSON
 			);
-        console.log('fetched shit', result as DocumentData);
+			console.log('fetched shit', result as DocumentData);
 
 			this.locked = true;
 			const high = hljs.highlightAuto(data);
