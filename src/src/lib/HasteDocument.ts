@@ -2,7 +2,8 @@ import { FetchMediaContentTypes, FetchResultTypes, QueryError, fetch } from '@sa
 import hljs, { type AutoHighlightResult, type HighlightResult } from 'highlight.js';
 import type { DocumentData, LoadedHasteDocument } from './types.js';
 
-const api = (handle?: string) => (import.meta.env.VITE_PUBLIC_API || 'no-api') + (handle || '');
+const API_BASE = import.meta.env.VITE_PUBLIC_API;
+const api = (handle?: string) => (API_BASE || 'no-api') + (handle || '');
 
 /**
  * Represents a single document
