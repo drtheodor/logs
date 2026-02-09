@@ -17,7 +17,7 @@ async function handleInitialiseState(shouldPushRouteState = true) {
 			app.pushRouteState();
 		}
 	} else {
-		await app.loadDocument(path.substring(1, path.length));
+		await app.loadDocument(path);
 	}
 }
 

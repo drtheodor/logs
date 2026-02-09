@@ -16,7 +16,7 @@ export class Haste {
 		{
 			where: selectElement('#box2 .save'),
 			label: 'Save',
-			shortcutDescription: 'Control Or Command + s',
+			shortcutDescription: '<kbd>Ctrl</kbd> or <kbd>⌘ Cmd</kbd> + <kbd>S</kbd>',
 			shortcut: (evt) => (evt.ctrlKey || evt.metaKey) && evt.key === 's',
 			action: async () => {
 				const textAreaValue = this.textArea.value;
@@ -28,7 +28,7 @@ export class Haste {
 		{
 			where: selectElement('#box2 .new'),
 			label: 'New',
-			shortcutDescription: 'Control Or Command + n',
+			shortcutDescription: '<kbd>Ctrl</kbd> or <kbd>⌘ Cmd</kbd> + <kbd>N</kbd>',
 			shortcut: (evt) => (evt.ctrlKey || evt.metaKey) && evt.key === 'n',
 			action: () => {
 				this.newDocument();
@@ -38,14 +38,14 @@ export class Haste {
 		{
 			where: selectElement('#box2 .duplicate'),
 			label: 'Duplicate & Edit',
-			shortcutDescription: 'Control Or Command + d',
+			shortcutDescription: '<kbd>Ctrl</kbd> or <kbd>⌘ Cmd</kbd> + <kbd>D</kbd>',
 			shortcut: (evt) => Boolean(this.doc?.locked) && (evt.ctrlKey || evt.metaKey) && evt.key === 'd',
 			action: () => this.duplicateDocument()
 		},
 		{
 			where: selectElement('#box2 .raw'),
-			label: 'Just Text',
-			shortcutDescription: 'Control Or Command + Shift + r',
+			label: 'Raw',
+			shortcutDescription: '<kbd>Ctrl</kbd> or <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> <kbd>R</kbd>',
 			shortcut: (evt) => (evt.ctrlKey || evt.metaKey) && evt.shiftKey && evt.key === 'r',
 			action: () =>
 				this.doc?.key
@@ -160,6 +160,7 @@ export class Haste {
 	}
 
 	private configureAboutDocumentRoute() {
+        return;
 		const logoElement = document.getElementById('logo');
 		if (logoElement) {
 			logoElement.addEventListener('click', (event) => {
@@ -301,7 +302,7 @@ export class Haste {
 
 		button.where.onmouseenter = () => {
 			selectElement('#box3 .label').textContent = button.label;
-			selectElement('#box3 .shortcut').textContent = button.shortcutDescription || '';
+			selectElement('#box3 .shortcut').innerHTML = button.shortcutDescription || '';
 			selectElement('#box3').style.display = 'block';
 		};
 

@@ -83,7 +83,6 @@ export class HasteDocument {
 				},
 				FetchResultTypes.JSON
 			);
-			console.log('fetched shit', result as DocumentData);
 
 			this.locked = true;
 			const high = hljs.highlightAuto(data);

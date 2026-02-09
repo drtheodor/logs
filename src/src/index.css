@@ -77,7 +77,7 @@ pre {
 	top: 0px;
 	right: 0px;
 	z-index: 1000;
-	width: 200px;
+	width: 264px;
 	user-select: none;
 }
 
@@ -102,7 +102,7 @@ pre {
 }
 
 #box2 .function {
-	width: 32px;
+	width: 48px;
 	height: 37px;
 	display: inline-block;
 	position: relative;
@@ -145,6 +145,8 @@ pre {
 	line-height: 14px;
 	padding: 10px 15px;
 	user-select: none;
+    border-radius: 4px;
+    margin: 8px;
 }
 
 #box3 .label {
@@ -160,4 +162,12 @@ pre {
 #box2 .button-picture {
 	border-width: 0;
 	font-size: inherit;
+}
+
+kbd {
+    border-radius: .25rem;
+    background-color: oklch(23.26% .014 253.1);
+    display: inline-flex;
+    padding-inline: .5rem;
+    border: 1px solid color-mix(in srgb,oklch(97.807% .029 256.847) 20%,#0000);
 }

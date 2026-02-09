@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	root: 'src',
-    base: '/logs',
+    base: '/bin',
 	css: {
 		postcss: {
 			plugins: [autoprefixer]
